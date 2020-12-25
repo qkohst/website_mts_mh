@@ -115,6 +115,9 @@
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
 
+    <!-- Sweet Alert  -->
+    @include('sweetalert::alert')
+
 </body>
 
 </html>
