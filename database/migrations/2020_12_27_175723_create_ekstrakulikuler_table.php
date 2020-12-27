@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProfilemadrasahTable extends Migration
+class CreateEkstrakulikulerTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,11 @@ class CreateProfilemadrasahTable extends Migration
      */
     public function up()
     {
-        Schema::create('profile_madrasah', function (Blueprint $table) {
+        Schema::create('ekstrakulikuler', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama', 45);
             $table->text('deskripsi');
-            $table->string('gambar');
-            $table->string('logo');
-            $table->integer('jumlah_rombel');
-            $table->integer('jumlah_siswa');
-            $table->integer('jumlah_guru');
-            $table->integer('jumlah_tendik');
+            $table->string('foto');
             $table->timestamps();
         });
     }
@@ -34,6 +29,6 @@ class CreateProfilemadrasahTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profilemadrasah');
+        Schema::dropIfExists('ekstrakulikuler');
     }
 }

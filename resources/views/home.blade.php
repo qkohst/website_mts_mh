@@ -8,7 +8,6 @@
         <div class="d-flex justify-content-between align-items-center">
             <h4>Dashboard</h4>
             <ol>
-                <li><a href="#">Admin</a></li>
                 <li>Dashboard</li>
             </ol>
         </div>

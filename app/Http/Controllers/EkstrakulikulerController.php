@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\ProfileMadrasah;
+use App\Ekstrakulikuler;
 use Illuminate\Http\Request;
 
-class ProfileMadrasahController extends Controller
+class EkstrakulikulerController extends Controller
 {
     public function __construct()
     {
@@ -18,8 +18,8 @@ class ProfileMadrasahController extends Controller
      */
     public function index()
     {
-        $profile_madrasah = ProfileMadrasah::orderByRaw('created_at DESC')->paginate(1);
-        return view('profilemadrasah.index', compact('profile_madrasah'));
+        $ekstrakulikuler = Ekstrakulikuler::all();
+        return view('ekstrakulikuler.index', compact('ekstrakulikuler'));
     }
 
     /**
@@ -29,7 +29,7 @@ class ProfileMadrasahController extends Controller
      */
     public function create()
     {
-        //
+        return view('ekstrakulikuler.create');
     }
 
     /**
@@ -62,8 +62,7 @@ class ProfileMadrasahController extends Controller
      */
     public function edit($id)
     {
-        $profile_madrasah = ProfileMadrasah::find($id);
-        return view('profilemadrasah.edit', compact('profile_madrasah'));
+        //
     }
 
     /**
@@ -75,21 +74,7 @@ class ProfileMadrasahController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $profile_madrasah = ProfileMadrasah::findorfail($id);
-        $profile_madrasah->update($request->all());
-
-        if ($request->hasFile('gambar')) {
-            $request->file('gambar')->move('gambar_profile/', 'GP-' . $request->file('gambar')->getClientOriginalName());
-            $profile_madrasah->gambar = 'GP-' . $request->file('gambar')->getClientOriginalName();
-            $profile_madrasah->save();
-        }
-        if ($request->hasFile('logo')) {
-            $request->file('logo')->move('logo_madrasah/', 'LP-' . $request->file('logo')->getClientOriginalName());
-            $profile_madrasah->logo = 'GP-' . $request->file('logo')->getClientOriginalName();
-            $profile_madrasah->save();
-        }
-        return redirect('profilemadrasah')->with('success', 'Edit data sukses');
-        
+        //
     }
 
     /**

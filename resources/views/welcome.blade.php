@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>MTs. Manba'ul Huda | Leanding Page</title>
+  <title>{{$profile_madrasah->nama}} | Leanding Page</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -34,8 +34,8 @@
     <div class="container d-flex align-items-center">
 
       <a class="navbar-brand mr-auto" href="#">
-        <img src="assets/img/favicon.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-        MTs. Manba'ul Huda
+        <img src="{{URL::to('/')}}/logo_madrasah/{{$profile_madrasah->logo}}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+        {{$profile_madrasah->nama}}
       </a>
 
       <nav class="nav-menu d-none d-lg-block">
@@ -71,7 +71,7 @@
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
           <h1>Selamat Datang</h1>
-          <h2>Di Website Madrasah Tsanawiyah Manba'ul Huda Klutuk</h2>
+          <h2>Di Website {{$profile_madrasah->nama}}</h2>
           <div class="d-flex">
             <a href="/register" class="btn-get-started scrollto" target="_blank">Daftar Sekarang</a>
           </div>
@@ -152,22 +152,12 @@
 
         <div class="row">
           <div class="col-lg-6">
-            <img src="assets/img/about.png" class="img-fluid" alt="">
+            <img src="{{URL::to('/')}}/gambar_profile/{{$profile_madrasah->gambar}}" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
             <h3>Profil Madrasah</h3>
-            <p class="font-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-              <li><i class="icofont-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda</li>
-            </ul>
             <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur.
+              {{$profile_madrasah->deskripsi}}
             </p>
           </div>
         </div>
@@ -182,22 +172,22 @@
         <div class="row counters">
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">6</span>
+            <span data-toggle="counter-up"> {{$profile_madrasah->jumlah_rombel}}</span>
             <p>Rombongan Belajar</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">521</span>
+            <span data-toggle="counter-up"> {{$profile_madrasah->jumlah_siswa}}</span>
             <p>Siswa</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">10</span>
+            <span data-toggle="counter-up"> {{$profile_madrasah->jumlah_guru}}</span>
             <p>Guru</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">2</span>
+            <span data-toggle="counter-up"> {{$profile_madrasah->jumlah_tendik}}</span>
             <p>Tenaga Kependidikan</p>
           </div>
 

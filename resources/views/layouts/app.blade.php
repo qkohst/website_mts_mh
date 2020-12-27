@@ -44,7 +44,7 @@
                     <li class="drop-down"><a href="#">Data Master</a>
                         <ul>
                             <li><a class="dropdown-item" href="{{ route('profilemadrasah.index') }}">Profile Madrasah</a></li>
-                            <li><a class="dropdown-item" href="#ekstrakulikuler">Ekstrakulikuler</a></li>
+                            <li><a class="dropdown-item" href="{{ route('ekstrakulikuler.index') }}">Ekstrakulikuler</a></li>
                             <li><a class="dropdown-item" href="#gtk">Guru & Tenaga Kependidikan</a></li>
                             <li><a class="dropdown-item" href="#gtk">Contact</a></li>
                         </ul>

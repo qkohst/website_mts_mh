@@ -11,11 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', 'LeandingPageController@index');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/profilemadrasah', 'ProfileMadrasahController');
+Route::resource('/ekstrakulikuler', 'EkstrakulikulerController');

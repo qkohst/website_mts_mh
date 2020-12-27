@@ -8,7 +8,7 @@
     <div class="d-flex justify-content-between align-items-center">
       <h4>Profile Madrasah</h4>
       <ol>
-        <li><a href="#">Admin</a></li>
+        <li><a href="{{ route('home') }}">Dashboard</a></li>
         <li>Profile Madrasah</li>
       </ol>
     </div>
@@ -59,7 +59,7 @@
       </div>
     </section><!-- End Counts Section -->
   </div>
-  <div class="text-center"> <a href="{{route('profilemadrasah.edit', $profile->id)}}" class="btn btn-lg btn-success">Edit Profile Madrasah</a></div>
+  <div class="text-center"> <a href="{{route('profilemadrasah.edit', $profile->id)}}" class="btn btn-md btn-success">Edit Profile Madrasah</a></div>
 </section><!-- End About -->
 @endforeach
 @endsection
