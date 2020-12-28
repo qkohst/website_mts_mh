@@ -18,7 +18,7 @@ class EkstrakulikulerController extends Controller
      */
     public function index()
     {
-        $ekstrakulikuler = Ekstrakulikuler::all();
+        $ekstrakulikuler = Ekstrakulikuler::orderByRaw('created_at DESC')->get();
         return view('ekstrakulikuler.index', compact('ekstrakulikuler'));
     }
 
@@ -40,7 +40,15 @@ class EkstrakulikulerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ekstrakulikuler = new Ekstrakulikuler();
+        $ekstrakulikuler->nama   = $request->input('nama');
+        $ekstrakulikuler->deskripsi   = $request->input('deskripsi');
+        $image                   = $request->file('foto');
+        $imageName   = 'Eks-' . $image->getClientOriginalName();
+        $image->move('foto_ekstrakulikuler/', $imageName);
+        $ekstrakulikuler->foto  = $imageName;
+        $ekstrakulikuler->save();
+        return redirect()->route('ekstrakulikuler.index')->with("success", "Tambah data suskes");
     }
 
     /**
@@ -62,7 +70,8 @@ class EkstrakulikulerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ekstrakulikuler = Ekstrakulikuler::find($id);
+        return view('ekstrakulikuler.edit', compact('ekstrakulikuler'));
     }
 
     /**
@@ -74,7 +83,15 @@ class EkstrakulikulerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $ekstrakulikuler = Ekstrakulikuler::findorfail($id);
+        $ekstrakulikuler->update($request->all());
+
+        if ($request->hasFile('foto')) {
+            $request->file('foto')->move('foto_ekstrakulikuler/', 'Eks-' . $request->file('foto')->getClientOriginalName());
+            $ekstrakulikuler->foto = 'Eks-' . $request->file('foto')->getClientOriginalName();
+            $ekstrakulikuler->save();
+        }
+        return redirect('ekstrakulikuler')->with('success', 'Edit data sukses');
     }
 
     /**
@@ -85,6 +102,8 @@ class EkstrakulikulerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $ekstrakulikuler = Ekstrakulikuler::find($id);
+        $ekstrakulikuler->delete();
+        return redirect('ekstrakulikuler')->with('success', 'Hapus data sukses');
     }
 }

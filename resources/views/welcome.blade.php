@@ -203,37 +203,21 @@
         <div class="section-title">
           <span>Ektrakulikuler</span>
           <h2>Ektrakulikuler</h2>
-          <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+          <p>Untuk mengembangkan minat dan bakat siswa di {{$profile_madrasah->nama}} terdapat beberapa kegiatan ekstrakulikuler, diantaraya :</p>
         </div>
 
         <div class="row">
+          @foreach($ekstrakulikuler as $data_ekskul)
           <div class="col-lg-4 col-md-6 d-flex mt-0 mt-md-0">
             <div class="bg-white">
-              <img src="assets/img/portfolio/portfolio-3.jpg" class="card-img-top w-80" alt="...">
+              <img src="{{URL::to('/')}}/foto_ekstrakulikuler/{{$data_ekskul->foto}}" class="card-img-top w-80" alt="...">
               <div class="container mt-2">
-                <h4><a href="">Pramuka</a></h4>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                <h4><a href="">{{$data_ekskul->nama}}</a></h4>
+                <p>{{$data_ekskul->deskripsi}}</p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 d-flex mt-0 mt-md-0">
-            <div class="bg-white">
-              <img src="assets/img/portfolio/portfolio-3.jpg" class="card-img-top w-80" alt="...">
-              <div class="container mt-2">
-                <h4><a href="">Voly</a></h4>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 d-flex mt-0 mt-md-0">
-            <div class="bg-white">
-              <img src="assets/img/portfolio/portfolio-3.jpg" class="card-img-top w-80" alt="...">
-              <div class="container mt-2">
-                <h4><a href="">Sepakbola</a></h4>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-              </div>
-            </div>
-          </div>
+          @endforeach
         </div>
 
       </div>
