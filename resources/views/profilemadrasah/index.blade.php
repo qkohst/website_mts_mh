@@ -17,8 +17,9 @@
 </section><!-- End Breadcrumbs -->
 
 <!-- ======= About Section ======= -->
-@foreach($profile_madrasah as $profile)
 <section id="about" class="about">
+  @if ($profile_madrasah->count() >= 1)
+  @foreach($profile_madrasah as $profile)
   <div class="container">
     <div class="row">
       <div class="col-lg-6">
@@ -60,6 +61,9 @@
     </section><!-- End Counts Section -->
   </div>
   <div class="text-center"> <a href="{{route('profilemadrasah.edit', $profile->id)}}" class="btn btn-md btn-success">Edit Profile Madrasah</a></div>
+  @endforeach
+  @else
+  <div class="text-center"> <a href="{{route('profilemadrasah.create')}}" class="btn btn-md btn-success">Buat Data Profile Madrasah</a></div>
+  @endif
 </section><!-- End About -->
-@endforeach
 @endsection

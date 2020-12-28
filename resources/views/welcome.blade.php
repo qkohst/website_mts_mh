@@ -291,7 +291,7 @@
         <div class="section-title">
           <span>Contact</span>
           <h2>Contact</h2>
-          <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+          <p>Untuk informasi lebih lanjut, bisa menghubungi contact berikut</p>
         </div>
 
         <div class="row">
@@ -301,25 +301,30 @@
               <div class="email">
                 <i class="icofont-envelope"></i>
                 <h4>Email:</h4>
-                <p>info@example.com</p>
+                <p>{{$contact->email}}</p>
               </div>
 
               <div class="phone">
                 <i class="icofont-phone"></i>
-                <h4>Telpon:</h4>
-                <p>+1 5589 55488 55s</p>
+                <h4>Telpon/HP:</h4>
+                <p>{{$contact->telpon}}</p>
               </div>
 
               <div class="phone">
                 <i class="icofont-instagram"></i>
                 <h4>Instagram:</h4>
-                <p>+1 5589 55488 55s</p>
+                <p>{{$contact->instagram}}</p>
               </div>
 
               <div class="phone">
                 <i class="icofont-facebook"></i>
                 <h4>Facebook:</h4>
-                <p>+1 5589 55488 55s</p>
+                <p>{{$contact->facebook}}</p>
+              </div>
+              <div class="phone">
+                <i class="icofont-twitter"></i>
+                <h4>Twitter:</h4>
+                <p>{{$contact->twitter}}</p>
               </div>
             </div>
           </div>
@@ -329,9 +334,9 @@
               <div class="address">
                 <i class="icofont-google-map"></i>
                 <h4>Alamat:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <p>{{$contact->alamat}}</p>
               </div>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.595876486137!2d111.83097421431606!3d-6.818906168591899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e770907cfd9a29f%3A0xba8c5bb73cd18bcd!2sMTS%20MANBA&#39;UL%20HUDA!5e0!3m2!1sen!2sid!4v1609170598791!5m2!1sen!2sid" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
             </div>
           </div>
 

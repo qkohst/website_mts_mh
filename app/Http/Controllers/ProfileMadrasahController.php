@@ -29,7 +29,7 @@ class ProfileMadrasahController extends Controller
      */
     public function create()
     {
-        //
+        return view('profilemadrasah.create');
     }
 
     /**
@@ -40,7 +40,23 @@ class ProfileMadrasahController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $profile_madrasah = new ProfileMadrasah();
+        $profile_madrasah->nama   = $request->input('nama');
+        $profile_madrasah->jumlah_rombel   = $request->input('jumlah_rombel');
+        $profile_madrasah->jumlah_siswa   = $request->input('jumlah_siswa');
+        $profile_madrasah->jumlah_guru   = $request->input('jumlah_guru');
+        $profile_madrasah->jumlah_tendik   = $request->input('jumlah_tendik');
+        $profile_madrasah->deskripsi   = $request->input('deskripsi');
+        $filegambar                  = $request->file('gambar');
+        $filegambarName   = 'GP-' . $filegambar->getClientOriginalName();
+        $filegambar->move('gambar_profile/', $filegambarName);
+        $profile_madrasah->gambar  = $filegambarName;
+        $filelogo                  = $request->file('logo');
+        $filelogoName   = 'LP-' . $filelogo->getClientOriginalName();
+        $filelogo->move('logo_madrasah/', $filelogoName);
+        $profile_madrasah->logo  = $filelogoName;
+        $profile_madrasah->save();
+        return redirect()->route('profilemadrasah.index')->with("success", "Data berhasil disimpan");
     }
 
     /**
@@ -89,7 +105,6 @@ class ProfileMadrasahController extends Controller
             $profile_madrasah->save();
         }
         return redirect('profilemadrasah')->with('success', 'Edit data sukses');
-        
     }
 
     /**

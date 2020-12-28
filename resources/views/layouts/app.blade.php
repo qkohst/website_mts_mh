@@ -46,7 +46,7 @@
                             <li><a class="dropdown-item" href="{{ route('profilemadrasah.index') }}">Profile Madrasah</a></li>
                             <li><a class="dropdown-item" href="{{ route('ekstrakulikuler.index') }}">Ekstrakulikuler</a></li>
                             <li><a class="dropdown-item" href="{{ route('gurutendik.index') }}">Guru & Tenaga Kependidikan</a></li>
-                            <li><a class="dropdown-item" href="#gtk">Contact</a></li>
+                            <li><a class="dropdown-item" href="{{ route('contact.index') }}">Contact</a></li>
                         </ul>
                     </li>
                     <li class="drop-down"><a href="">Data PPDB Online</a>

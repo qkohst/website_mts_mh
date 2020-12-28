@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\ProfileMadrasah;
 use App\Ekstrakulikuler;
 use App\GuruTendik;
+use App\Contact;
 use Illuminate\Http\Request;
 
 class LeandingPageController extends Controller
@@ -14,6 +15,7 @@ class LeandingPageController extends Controller
         $profile_madrasah = ProfileMadrasah::first();
         $ekstrakulikuler = Ekstrakulikuler::orderByRaw('created_at DESC')->get();
         $gurutendik = GuruTendik::all();
-        return view('welcome', compact('profile_madrasah', 'ekstrakulikuler','gurutendik'));
+        $contact = Contact::first();
+        return view('welcome', compact('profile_madrasah', 'ekstrakulikuler','gurutendik','contact'));
     }
 }
