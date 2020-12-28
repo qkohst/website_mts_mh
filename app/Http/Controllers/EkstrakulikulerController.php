@@ -102,8 +102,12 @@ class EkstrakulikulerController extends Controller
      */
     public function destroy($id)
     {
-        $ekstrakulikuler = Ekstrakulikuler::find($id);
-        $ekstrakulikuler->delete();
-        return redirect('ekstrakulikuler')->with('success', 'Hapus data sukses');
+        try {
+            $ekstrakulikuler = Ekstrakulikuler::find($id);
+            $ekstrakulikuler->delete();
+            return redirect('ekstrakulikuler')->with('success', 'Hapus data sukses');
+        } catch (\Illuminate\Database\QueryException $ex) {
+            return redirect()->back()->with('warning', 'Maaf data  tidak dapat dihapus');
+        }
     }
 }

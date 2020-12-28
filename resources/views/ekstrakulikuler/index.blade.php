@@ -30,12 +30,8 @@
             <p>{{$data_ekskul->deskripsi}}</p>
           </div>
           <a href="{{route('ekstrakulikuler.edit', $data_ekskul->id)}}" class="btn btn-sm btn-primary">Edit Data</a>
-          <a href="{{ route('ekstrakulikuler.destroy', $data_ekskul->id) }}" class="btn btn-sm btn-danger" onclick="event.preventDefault(); 
-                      document.getElementById('delete').submit(); return confirm('Hapus Data ?');">Hapus Data</a>
-          <form id="delete" action="{{ route('ekstrakulikuler.destroy', $data_ekskul->id) }}" method="POST" style="display: none;">
-            @csrf
-            @method('delete')
-          </form>
+          <a href="/ekstrakulikuler/{{$data_ekskul->id}}/destroy" class="btn btn-danger btn-sm my-1 mr-sm-1" onclick="return confirm('Hapus Data ?')"><i class="nav-icon fas fa-trash"></i>
+            Hapus Data</a>
         </div>
       </div>
       @endforeach

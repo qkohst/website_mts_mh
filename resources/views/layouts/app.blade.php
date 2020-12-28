@@ -45,7 +45,7 @@
                         <ul>
                             <li><a class="dropdown-item" href="{{ route('profilemadrasah.index') }}">Profile Madrasah</a></li>
                             <li><a class="dropdown-item" href="{{ route('ekstrakulikuler.index') }}">Ekstrakulikuler</a></li>
-                            <li><a class="dropdown-item" href="#gtk">Guru & Tenaga Kependidikan</a></li>
+                            <li><a class="dropdown-item" href="{{ route('gurutendik.index') }}">Guru & Tenaga Kependidikan</a></li>
                             <li><a class="dropdown-item" href="#gtk">Contact</a></li>
                         </ul>
                     </li>
