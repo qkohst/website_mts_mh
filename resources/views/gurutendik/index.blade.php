@@ -17,8 +17,8 @@
 </section><!-- End Breadcrumbs -->
 
 <!-- ======= About Section ======= -->
-<section id="gtk" class="team">
-  <div class="text-center pb-4"><a href="{{route('gurutendik.create')}}" class="btn btn-md btn-success">Tambah Data GTK</a></div>
+<section id="gtk" class="team pt-3">
+  <div class="text-center"><a href="{{route('gurutendik.create')}}" class="btn btn-md btn-success">Tambah Data GTK</a></div>
   <div class="container">
     <div class="row">
       @foreach($gurutendik as $gtk)

@@ -1383,3 +1383,53 @@ section {
   opacity: 0;
   filter: alpha(opacity=0);
 }
+
+/* tinggi card */
+.post-body {
+  height: 300px;
+  position: relative;
+  padding: 20px 15px 0;
+}
+/* tinggi card */
+.post-body-berita {
+  height: 300px;
+  position: relative;
+  padding: 20px 15px 0;
+}
+
+
+/* untuk menghilangkan padding pada .panel-heading */
+.post-thumb {
+  padding: 0
+}
+
+/* mengatur font dan link judul artikel*/
+.post-title a {
+  color: rgba(0,0,0,0.7);
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.5em;
+  letter-spacing: 0.01rem;
+}
+.post-title a:hover { text-decoration: none }
+
+/* posisi author selalu di bawah */
+.post-author {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  font-size: 13px;
+}
+
+.post-author .author-photo {
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.scroll{
+  width: 330px;
+  padding: 10px;
+  overflow: scroll;
+  height: 320px;
+
+}

@@ -23,6 +23,9 @@
     <link href="/assets/vendor/venobox/venobox.css" rel="stylesheet">
     <link href="/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
 
+    <!-- Summernote -->
+    <link href="/assets/summernote/summernote.css" rel="stylesheet">
+
     <!-- Template Main CSS File -->
     <link href="/assets/css/style.css" rel="stylesheet">
 </head>
@@ -55,7 +58,7 @@
                             <li><a href="/register" target="_blank">Data Pendaftar</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Data Berita</a></li>
+                    <li><a href="{{ route('berita.index') }}">Data Berita</a></li>
                     <li class="drop-down"><a href=""><b>{{ Auth::user()->name }}</b></a>
                         <ul>
                             <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -114,6 +117,11 @@
 
     <!-- Template Main JS File -->
     <script src="/assets/js/main.js"></script>
+
+    <!-- Summernote -->
+    <script src="/assets/summernote/js/summernote.min.js"></script>
+    <!-- Summernote init -->
+    <script src="/js/plugins-init/summernote-init.js"></script>
 
     <!-- Sweet Alert  -->
     @include('sweetalert::alert')

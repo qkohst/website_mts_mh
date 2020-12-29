@@ -101,7 +101,7 @@ class ProfileMadrasahController extends Controller
         }
         if ($request->hasFile('logo')) {
             $request->file('logo')->move('logo_madrasah/', 'LP-' . $request->file('logo')->getClientOriginalName());
-            $profile_madrasah->logo = 'GP-' . $request->file('logo')->getClientOriginalName();
+            $profile_madrasah->logo = 'LP-' . $request->file('logo')->getClientOriginalName();
             $profile_madrasah->save();
         }
         return redirect('profilemadrasah')->with('success', 'Edit data sukses');

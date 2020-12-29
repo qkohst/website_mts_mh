@@ -25,3 +25,5 @@ Route::get('/ekstrakulikuler/{id}/destroy', 'EkstrakulikulerController@destroy')
 Route::resource('/gurutendik', 'GuruTendikController');
 Route::get('/gurutendik/{id}/destroy', 'GuruTendikController@destroy');
 Route::resource('/contact', 'ContactController');
+Route::resource('/berita', 'BeritaController');
+Route::get('/berita/{id}/destroy', 'BeritaController@destroy');

@@ -6,25 +6,20 @@
   <div class="container">
 
     <div class="d-flex justify-content-between align-items-center">
-      <h4>Tambah Data Ekstrakulikuler</h4>
+      <h4>Tulis Berita Baru</h4>
       <ol>
         <li><a href="{{ route('home') }}">Dashboard</a></li>
-        <li><a href="{{ route('ekstrakulikuler.index') }}">Ekstrakulikuler</a></li>
-        <li>Tambah Data</li>
+        <li><a href="{{ route('berita.index') }}">Berita</a></li>
+        <li>Tulis Berita</li>
       </ol>
     </div>
     <section id="contact" class="contact pt-3 pb-3">
-      <form action="{{ route('ekstrakulikuler.store') }}" method="post" role="form" class="php-form bg-white" enctype="multipart/form-data">
+      <form action="{{ route('berita.store') }}" method="post" role="form" class="php-form bg-white" enctype="multipart/form-data">
         {{csrf_field()}}
         @method('post')
         <div class="form-group">
-          <label for="nama">Nama Ekstrakuliker</label>
-          <input type="text" class="form-control" name="nama" id="nama" value="{{ old('nama') }}" required>
-          <div class="validate"></div>
-        </div>
-        <div class="form-group">
-          <label for="deskripsi">Deskripsi</label>
-          <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3" required>{{ old('deskripsi') }}</textarea>
+          <label for="judul">Judul</label>
+          <input type="text" class="form-control" name="judul" id="judul" value="{{ old('judul') }}" required>
           <div class="validate"></div>
         </div>
         <div class="form-row">
@@ -39,7 +34,18 @@
               <span class='label label-info' id="upload-file-info">Belum ada file yang dipilih</span>
             </div>
           </div>
+          <div class="form-group col-md-6">
+            <label for="penulis">Penulis</label>
+            <input type="text" class="form-control" name="penulis" id="penulis" value="{{ old('penulis') }}" required>
+            <div class="validate"></div>
+          </div>
         </div>
+        <div class="form-group">
+          <label for="deskripsi">Deskripsi</label>
+          <textarea class="form-control summernote" id="deskripsi" name="deskripsi" required>{{ old('deskripsi') }}</textarea>
+          <div class="validate"></div>
+        </div>
+
         <div class="text-center"><button class="bg-success btn-sm" type="submit">Simpan Data</button></div>
       </form>
     </section><!-- End Contact Section -->
