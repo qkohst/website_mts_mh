@@ -92,54 +92,25 @@
         <div class="section-title">
           <span>Berita Terbaru</span>
           <h2>Berita Terbaru</h2>
-          <p><a href="#">Lihat semua berita....</a></p>
+          <p><a href="/home/berita" target="_blank">Lihat semua berita....</a></p>
         </div>
 
         <div class="owl-carousel testimonials-carousel">
-          <div class="testimonial-item">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-            <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-            <h3>Sara Wilsson</h3>
-            <h4>Designer</h4>
+          @foreach($berita_terbaru as $berita)
+          <div class="panel panel-default px-2">
+            <div class="panel-heading post-thumb">
+              <img src="{{URL::to('/')}}/foto_berita/{{$berita->foto}}" class="testimonial-img" alt="">
+            </div>
+            <div class="panel-body post-body-berita">
+              <h5><b>{{$berita->judul}}</b></h5>
+              <h6>{{$berita->penulis}} - {{$berita->created_at->diffForHumans()}}</h6>
+              <a href="/home/berita/{{$berita->id}}" target="_blank">Baca selengkapnya</a>
+              <p>
+                {!!substr($berita->deskripsi, 0, 220)!!}.....
+              </p>
+            </div>
           </div>
-
-          <div class="testimonial-item">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-            <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-            <h3>Jena Karlis</h3>
-            <h4>Store Owner</h4>
-          </div>
-
-          <div class="testimonial-item">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-            <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-            <h3>Matt Brandon</h3>
-            <h4>Freelancer</h4>
-          </div>
-
-          <div class="testimonial-item">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-            <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-            <h3>John Larson</h3>
-            <h4>Entrepreneur</h4>
-          </div>
-
+          @endforeach
         </div>
 
       </div>
@@ -239,7 +210,7 @@
               <h4>{{$gtk->nama}}</h4>
               <span>{{$gtk->jabatan}}</span>
               <p>
-              {{$gtk->motto}}
+                {{$gtk->motto}}
               </p>
               <div class="social">
                 <a><i class="icofont-twitter"> {{$gtk->twitter}}</i></a>

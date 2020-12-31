@@ -15,6 +15,8 @@
 //     return view('welcome');
 // });
 Route::get('/', 'LeandingPageController@index');
+Route::get('/home/berita/{id}', 'LeandingPageController@show_berita');
+Route::get('/home/berita', 'LeandingPageController@index_berita');
 
 Auth::routes();
 
