@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ProfileMadrasah;
 use App\Berita;
 use Illuminate\Http\Request;
 
@@ -18,8 +19,9 @@ class BeritaController extends Controller
      */
     public function index()
     {
+        $madrasah = ProfileMadrasah::first();
         $berita = Berita::orderByRaw('created_at DESC')->get();
-        return view('berita.index', compact('berita'));
+        return view('berita.index', compact('berita', 'madrasah'));
     }
 
     /**
@@ -29,7 +31,8 @@ class BeritaController extends Controller
      */
     public function create()
     {
-        return view('berita.create');
+        $madrasah = ProfileMadrasah::first();
+        return view('berita.create', compact('madrasah'));
     }
 
     /**
@@ -60,8 +63,9 @@ class BeritaController extends Controller
      */
     public function show($id)
     {
+        $madrasah = ProfileMadrasah::first();
         $berita = Berita::find($id);
-        return view('berita.show', compact('berita'));
+        return view('berita.show', compact('berita', 'madrasah'));
     }
 
     /**
@@ -72,8 +76,9 @@ class BeritaController extends Controller
      */
     public function edit($id)
     {
+        $madrasah = ProfileMadrasah::first();
         $berita = Berita::find($id);
-        return view('berita.edit', compact('berita'));
+        return view('berita.edit', compact('berita','madrasah'));
     }
 
     /**

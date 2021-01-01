@@ -18,8 +18,9 @@ class ProfileMadrasahController extends Controller
      */
     public function index()
     {
+        $madrasah = ProfileMadrasah::first();
         $profile_madrasah = ProfileMadrasah::orderByRaw('created_at DESC')->paginate(1);
-        return view('profilemadrasah.index', compact('profile_madrasah'));
+        return view('profilemadrasah.index', compact('profile_madrasah', 'madrasah'));
     }
 
     /**
@@ -29,7 +30,8 @@ class ProfileMadrasahController extends Controller
      */
     public function create()
     {
-        return view('profilemadrasah.create');
+        $madrasah = ProfileMadrasah::first();
+        return view('profilemadrasah.create', compact('madrasah'));
     }
 
     /**
@@ -78,8 +80,9 @@ class ProfileMadrasahController extends Controller
      */
     public function edit($id)
     {
+        $madrasah = ProfileMadrasah::first();
         $profile_madrasah = ProfileMadrasah::find($id);
-        return view('profilemadrasah.edit', compact('profile_madrasah'));
+        return view('profilemadrasah.edit', compact('profile_madrasah','madrasah'));
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ProfileMadrasah;
 use App\GuruTendik;
 use Illuminate\Http\Request;
 
@@ -18,8 +19,9 @@ class GuruTendikController extends Controller
      */
     public function index()
     {
+        $madrasah = ProfileMadrasah::first();
         $gurutendik = GuruTendik::all();
-        return view('gurutendik.index', compact('gurutendik'));
+        return view('gurutendik.index', compact('gurutendik','madrasah'));
     }
 
     /**
@@ -29,7 +31,8 @@ class GuruTendikController extends Controller
      */
     public function create()
     {
-        return view('gurutendik.create');
+        $madrasah = ProfileMadrasah::first();
+        return view('gurutendik.create', compact('madrasah'));
     }
 
     /**
@@ -74,8 +77,9 @@ class GuruTendikController extends Controller
      */
     public function edit($id)
     {
+        $madrasah = ProfileMadrasah::first();
         $gurutendik = GuruTendik::find($id);
-        return view('gurutendik.edit', compact('gurutendik'));
+        return view('gurutendik.edit', compact('gurutendik','madrasah'));
     }
 
     /**

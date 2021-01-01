@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ProfileMadrasah;
 use App\Ekstrakulikuler;
 use Illuminate\Http\Request;
 
@@ -18,8 +19,9 @@ class EkstrakulikulerController extends Controller
      */
     public function index()
     {
+        $madrasah = ProfileMadrasah::first();
         $ekstrakulikuler = Ekstrakulikuler::orderByRaw('created_at DESC')->get();
-        return view('ekstrakulikuler.index', compact('ekstrakulikuler'));
+        return view('ekstrakulikuler.index', compact('ekstrakulikuler','madrasah'));
     }
 
     /**
@@ -29,7 +31,8 @@ class EkstrakulikulerController extends Controller
      */
     public function create()
     {
-        return view('ekstrakulikuler.create');
+        $madrasah = ProfileMadrasah::first();
+        return view('ekstrakulikuler.create', compact('madrasah'));
     }
 
     /**
@@ -70,8 +73,9 @@ class EkstrakulikulerController extends Controller
      */
     public function edit($id)
     {
+        $madrasah = ProfileMadrasah::first();
         $ekstrakulikuler = Ekstrakulikuler::find($id);
-        return view('ekstrakulikuler.edit', compact('ekstrakulikuler'));
+        return view('ekstrakulikuler.edit', compact('ekstrakulikuler','madrasah'));
     }
 
     /**

@@ -52,7 +52,9 @@
           <li class="drop-down"><a href="">PPDB Online</a>
             <ul>
               <li><a href="#informasi_pendaftaran">Informasi Pendaftaran</a></li>
+              @if ($informasi_pendaftaran->status==1)
               <li><a href="/register" target="_blank">Daftar Sekarang</a></li>
+              @endif
             </ul>
           </li>
           <li><a href="#contact">Contact</a></li>
@@ -71,10 +73,21 @@
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
           <h1>Selamat Datang</h1>
-          <h2>Di Website {{$profile_madrasah->nama}}</h2>
+
+          @if ($informasi_pendaftaran->status==1)
+          <h2>Di Website {{$profile_madrasah->nama}}, untuk pendaftaran peserta didik baru silahkan klik tombol daftar dibawah.</h2>
           <div class="d-flex">
             <a href="/register" class="btn-get-started scrollto" target="_blank">Daftar Sekarang</a>
+            <a href="#informasi_pendaftaran" class="btn-watch-video scrollto">Informasi Pendaftaran <i class="icofont-info-circle"></i></a>
           </div>
+          @else
+          <h2>Di Website {{$profile_madrasah->nama}}, pendaftaran peserta didik baru <span class="badge badge-danger">Telah Ditutup</span> sampai jumpa pada PPDB tahun depan.</h2>
+          @endif
+
+          <!-- <h2>Di Website {{$profile_madrasah->nama}}</h2>
+          <div class="d-flex">
+            <a href="/register" class="btn-get-started scrollto" target="_blank">Daftar Sekarang</a>
+          </div> -->
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
           <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
@@ -231,24 +244,17 @@
 
         <div class="row">
           <div class="col-lg-6">
-            <img src="assets/img/about.png" class="img-fluid" alt="">
+            <img src="{{URL::to('/')}}/gambar_pendaftaran/{{$informasi_pendaftaran->gambar}}" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
             <h3>Informasi Pendafaran</h3>
-            <p class="font-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-              <li><i class="icofont-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda</li>
-            </ul>
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-            <a href="/register" class="btn btn-success" target="_blank">Daftar Sekarang</a>
+            {!!$informasi_pendaftaran->deskripsi!!}
+
+            @if ($informasi_pendaftaran->status==1)
+            <a href="/register" class="btn btn-success" target="_blank" disabled>Daftar Sekarang</a>
+            @else
+            <a class="btn btn-danger disabled" aria-disabled="true">Pendaftaran Telah Ditutup</a>
+            @endif
           </div>
         </div>
 

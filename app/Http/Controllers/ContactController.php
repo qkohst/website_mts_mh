@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ProfileMadrasah;
 use App\Contact;
 use Illuminate\Http\Request;
 
@@ -18,8 +19,9 @@ class ContactController extends Controller
      */
     public function index()
     {
+        $madrasah = ProfileMadrasah::first();
         $contact = Contact::orderByRaw('created_at DESC')->paginate(1);
-        return view('contact.index', compact('contact'));
+        return view('contact.index', compact('contact', 'madrasah'));
     }
 
     /**
@@ -29,7 +31,8 @@ class ContactController extends Controller
      */
     public function create()
     {
-        return view('contact.create');
+        $madrasah = ProfileMadrasah::first();
+        return view('contact.create', compact('madrasah'));
     }
 
     /**
@@ -70,8 +73,9 @@ class ContactController extends Controller
      */
     public function edit($id)
     {
+        $madrasah = ProfileMadrasah::first();
         $contact = Contact::find($id);
-        return view('contact.edit', compact('contact'));
+        return view('contact.edit', compact('contact','madrasah'));
     }
 
     /**

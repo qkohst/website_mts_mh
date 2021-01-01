@@ -7,6 +7,7 @@ use App\Ekstrakulikuler;
 use App\GuruTendik;
 use App\Contact;
 use App\Berita;
+use App\InformasiPendaftaran;
 use Illuminate\Http\Request;
 
 class LeandingPageController extends Controller
@@ -18,7 +19,8 @@ class LeandingPageController extends Controller
         $gurutendik = GuruTendik::all();
         $contact = Contact::first();
         $berita_terbaru = Berita::orderByRaw('created_at DESC')->paginate(6);
-        return view('welcome', compact('profile_madrasah', 'ekstrakulikuler', 'gurutendik', 'contact', 'berita_terbaru'));
+        $informasi_pendaftaran = InformasiPendaftaran::first();
+        return view('welcome', compact('profile_madrasah', 'ekstrakulikuler', 'gurutendik', 'contact', 'berita_terbaru','informasi_pendaftaran'));
     }
 
     public function index_berita()

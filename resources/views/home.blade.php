@@ -23,10 +23,7 @@
             <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
                 <h1>Selamat Datang</h1>
                 <h1>{{ Auth::user()->name }}</h1>
-                <h2>Anda Login Sebagai Administrator Di Website Madrasah Tsanawiyah Manba'ul Huda Klutuk</h2>
-                <div class="d-flex">
-                    <a href="/register" class="btn-get-started scrollto" target="_blank">Ubah Gambar Utama</a>
-                </div>
+                <h2>Anda Login Sebagai Administrator Di Website {{$profile_madrasah->nama}}</h2>
             </div>
             <div class="col-lg-6 order-1 order-lg-2 hero-img">
                 <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">

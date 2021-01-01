@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ProfileMadrasah;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $madrasah = ProfileMadrasah::first();
+        return view('home', compact('madrasah'));
     }
 }

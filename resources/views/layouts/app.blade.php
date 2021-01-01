@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>MTs. Manba'ul Huda | Admin</title>
+    <title>{{$madrasah->nama}} | Admin</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -37,8 +37,8 @@
         <div class="container d-flex align-items-center">
 
             <a class="navbar-brand mr-auto" href="#">
-                <img src="/assets/img/favicon.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-                MTs. Manba'ul Huda
+                <img src="{{URL::to('/')}}/logo_madrasah/{{$madrasah->logo}}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                {{$madrasah->nama}}
             </a>
 
             <nav class="nav-menu d-none d-lg-block">
@@ -54,7 +54,7 @@
                     </li>
                     <li class="drop-down"><a href="">Data PPDB Online</a>
                         <ul>
-                            <li><a class="dropdown-item" href="#informasi_pendaftaran">Informasi Pendaftaran</a></li>
+                            <li><a class="dropdown-item" href="{{ route('informasipendaftaran.index') }}">Informasi Pendaftaran</a></li>
                             <li><a href="/register" target="_blank">Data Pendaftar</a></li>
                         </ul>
                     </li>
@@ -90,7 +90,7 @@
     <footer id="footer">
         <div class="container footer-bottom clearfix">
             <div class="copyright">
-                MTs. Manba'ul Huda | <strong><span>2020</span></strong>. All Rights Reserved
+                {{$madrasah->nama}} | <strong><span>2020</span></strong>. All Rights Reserved
             </div>
             <div class="credits">
                 <!-- All the links in the footer should remain intact. -->

@@ -104,7 +104,7 @@
                   <h6 class="post-title">
                     <span>{{$data_berita->penulis}} - {{$data_berita->created_at->diffForHumans()}}</span>
                   </h6>
-                  <span>{!!substr($data_berita->deskripsi, 0, 220)!!}..... </span> <br>
+                  <span>{!!substr($data_berita->deskripsi, 0, 300)!!}..... </span> <br>
                   <a href="/home/berita/{{$data_berita->id}}" target="_blank">Baca selengkapnya</a>
                 </div>
               </div>

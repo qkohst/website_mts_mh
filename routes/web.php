@@ -29,3 +29,4 @@ Route::get('/gurutendik/{id}/destroy', 'GuruTendikController@destroy');
 Route::resource('/contact', 'ContactController');
 Route::resource('/berita', 'BeritaController');
 Route::get('/berita/{id}/destroy', 'BeritaController@destroy');
+Route::resource('/informasipendaftaran', 'InformasiPendaftaranController');
