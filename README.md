@@ -1,3 +1,35 @@
+Leanding Page
+![MTs-Manba-ul-Huda-Leanding-Page](https://user-images.githubusercontent.com/57386598/105629677-14eb0d80-5e77-11eb-85c0-07761830ae9b.png)
+
+Lihat Deatail Berita
+![MTs-Manba-ul-Huda-berita](https://user-images.githubusercontent.com/57386598/105629675-11f01d00-5e77-11eb-805f-e42bc8e5b945.png)
+
+Login Page
+![1](https://user-images.githubusercontent.com/57386598/105629686-1d434880-5e77-11eb-84aa-2ee8111d99d6.png)
+
+Dashboard
+![2](https://user-images.githubusercontent.com/57386598/105629688-1e747580-5e77-11eb-8d37-759401a84b0a.png)
+
+Admin Page
+![3](https://user-images.githubusercontent.com/57386598/105629689-1f0d0c00-5e77-11eb-86c8-ed6bd6d1ac3e.png)
+
+
+![4](https://user-images.githubusercontent.com/57386598/105629690-203e3900-5e77-11eb-917f-c509e7256735.png)
+
+
+![5](https://user-images.githubusercontent.com/57386598/105629696-2502ed00-5e77-11eb-8d66-0c85d3c2021a.png)
+
+
+![6](https://user-images.githubusercontent.com/57386598/105629699-27654700-5e77-11eb-8812-02dd7cd155e5.png)
+
+
+![7](https://user-images.githubusercontent.com/57386598/105629700-28967400-5e77-11eb-8d92-fe4dbec340c1.png)
+
+
+![confirm](https://user-images.githubusercontent.com/57386598/105629734-567bb880-5e77-11eb-9737-f02617ded81f.png)
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
